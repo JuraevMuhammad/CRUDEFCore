@@ -13,6 +13,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 builder.Services.AddScoped<ApplicationDbContext>();
 builder.Services.AddScoped<IHackathonService, HackathonService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<IParticipantService, ParticipantService>();
                          
 var app = builder.Build();
 
